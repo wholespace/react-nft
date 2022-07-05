@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect, useState } from "react";
+import { FC, useRef } from "react";
 import {
   HomeStyled,
   HeaderStyled,
@@ -22,8 +22,6 @@ import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { GrFacebook } from "react-icons/gr";
 
 const Home: FC = () => {
-  const handleScroll = (e: any) => {};
-
   const background = useRef<HTMLImageElement>(null);
 
   // const [animationLeaf, setAnimationLeaf] = useState<any>({
@@ -320,7 +318,7 @@ const Home: FC = () => {
           </div>
         </div>
       </SettingStyled>
-      <TripStyled id="trip" className="trip" onScroll={handleScroll}>
+      <TripStyled id="trip" className="trip">
         <div className="title">TRIP</div>
         <div className="body">
           <div className="item">
