@@ -18,7 +18,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { GrFacebook } from "react-icons/gr";
-import Trip from "./Trip";
 
 const Home: FC = () => {
   const handleScroll = (e: any) => {};
