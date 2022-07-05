@@ -360,7 +360,7 @@ export const SettingStyled = styled.div`
       top: 135px;
       right: 0;
 
-      width: calc(100% - 1000px);
+      width: calc(100% - 1050px);
       opacity: 0.4;
     }
   }
@@ -384,6 +384,7 @@ export const SettingStyled = styled.div`
         column-gap: 208px;
 
         font-size: 16px;
+        opacity: 0.6;
 
         > .text-list {
           width: 217px;
@@ -414,7 +415,7 @@ export const SettingStyled = styled.div`
       flex: 1;
       display: flex;
 
-      padding-left: 340px;
+      padding-left: 80px;
       /* height: 200px; */
     }
   }
@@ -426,6 +427,8 @@ export const SliderItem = styled.div`
   /* background-color: red; */
   /* width: 250px !important; */
   /* border: 1px solid red; */
+
+  margin-bottom: 30px;
   > img {
     margin-bottom: 11px;
   }
@@ -435,12 +438,13 @@ export const SliderItem = styled.div`
 
   > .role {
     font-size: 13px;
+    word-spacing: 3px;
   }
 `;
 
 export const SliderDiv = styled.div`
   max-height: 510px;
-  max-width: 900px;
+  max-width: 874px;
 `;
 
 export const TripStyled = styled.div`

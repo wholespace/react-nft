@@ -27,6 +27,7 @@ const Home: FC = () => {
 
   const settings = {
     infinite: true,
+    centerMode: true,
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500,
@@ -67,7 +68,7 @@ const Home: FC = () => {
           alt=""
         />
         <div className="descript">
-          <div className="text" data-aos="fade-left">
+          <div className="text" data-aos="fade-up">
             spending lives in search of it, a central human experience which{" "}
             <br /> alters all other experiences.
           </div>
