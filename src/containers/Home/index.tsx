@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useRef, useEffect } from "react";
 import {
   HomeStyled,
   HeaderStyled,
@@ -16,34 +16,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// import "./test";
-
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { GrFacebook } from "react-icons/gr";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home: FC = () => {
   const background = useRef<HTMLImageElement>(null);
 
-  // const [animationLeaf, setAnimationLeaf] = useState<any>({
-  //   width: 0,
-  //   height: 0,
-  //   world: document.createElement("div"),
-  //   leaves: [],
-  //   option: {
-  //     numLeaves: 20,
-  //     wind: {
-  //       magnitude: 1.2,
-  //       maxSpeed: 12,
-  //       duration: 300,
-  //       start: 0,
-  //       speed: 0,
-  //     },
-  //   },
-  //   timer: 0,
-  // });
-
   const settings = {
-    // centerMode: true,
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
@@ -51,11 +33,14 @@ const Home: FC = () => {
     rows: 2,
     nextArrow: <></>,
     prevArrow: <></>,
-    // slidesPerRow: 1,
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <HomeStyled>
+    <HomeStyled data-aos="fade-in">
       <HeaderStyled>
         <div className="header">
           <img src="/img/icons/avatar.svg" alt="" />
@@ -67,10 +52,10 @@ const Home: FC = () => {
           </div>
         </div>
         <div className="title">
-          <div className="title-1">
+          <div className="title-1" data-aos="fade-up">
             A state of <br /> mind that is achieved
           </div>
-          <div className="title-2">
+          <div className="title-2" data-aos="fade-up">
             through <br /> the inner self
           </div>
           <hr />
@@ -82,17 +67,17 @@ const Home: FC = () => {
           alt=""
         />
         <div className="descript">
-          <div className="text">
+          <div className="text" data-aos="fade-left">
             spending lives in search of it, a central human experience which{" "}
             <br /> alters all other experiences.
           </div>
           <div className="call">
             <hr />
-            <span>We call it</span>
+            <span data-aos="fade-up">We call it</span>
           </div>
-          <div className="enlightment">
+          <div className="enlightment" data-aos="fade-up">
             <span>enlightment</span>
-            <img src="/img/picture-1.svg" alt="" />
+            <img data-aos="fade-up" src="/img/picture-1.svg" alt="" />
           </div>
         </div>
       </HeaderStyled>
@@ -150,7 +135,7 @@ const Home: FC = () => {
         </div>
       </MenuStyled>
       <SetStyled id="set">
-        <div className="title">
+        <div data-aos="fade-up" className="title">
           <span>
             "Set" is the mental state a person brings to the <br /> experience,
             like thoughts, mood and expectations
@@ -164,7 +149,7 @@ const Home: FC = () => {
           <div className="list">
             <div className="item">
               <img src="/img/icons/community.svg" alt="" />
-              <div className="text">
+              <div className="text" data-aos="fade-up">
                 <span className="title">Community</span>
                 <span className="content">
                   XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
@@ -174,7 +159,7 @@ const Home: FC = () => {
             </div>
             <div className="item">
               <img src="/img/icons/artwork.svg" alt="" />
-              <div className="text">
+              <div className="text" data-aos="fade-up">
                 <span className="title">Artwork</span>
                 <span className="content">
                   XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
@@ -184,7 +169,7 @@ const Home: FC = () => {
             </div>
             <div className="item">
               <img src="/img/icons/example.svg" alt="" />
-              <div className="text">
+              <div className="text" data-aos="fade-up">
                 <span className="title">Example</span>
                 <span className="content">
                   XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
@@ -196,14 +181,14 @@ const Home: FC = () => {
         </div>
       </SetStyled>
       <SettingStyled id="setting">
-        <div className="title">
+        <div className="title" data-aos="fade-up">
           <span>"Setting" the physical and social environment</span>
           <hr />
         </div>
         <div className="body">
           <div className="left">
             <div className="text-one">
-              <div className="text-list">
+              <div className="text-list" data-aos="fade-up">
                 <p>XXXXXXXXXXXXXXXXXXXXXXXX</p>
                 <p>
                   XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
@@ -214,7 +199,7 @@ const Home: FC = () => {
                   XXXXXXXXXXXXXXXXX
                 </p>
               </div>
-              <div className="text-list">
+              <div className="text-list" data-aos="fade-up">
                 <p>XXXXXXXXXXXXXXXXXXXXXXXX</p>
                 <p>
                   XXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX
@@ -226,7 +211,7 @@ const Home: FC = () => {
                 </p>
               </div>
             </div>
-            <div className="text-two">
+            <div className="text-two" data-aos="fade-up">
               XXXXXXXXXXXXXXXX <br />
               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br />
               XXXXXXXXXXXXXXXXXXXXXXXXXX <br /> XXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -319,7 +304,9 @@ const Home: FC = () => {
         </div>
       </SettingStyled>
       <TripStyled id="trip" className="trip">
-        <div className="title">TRIP</div>
+        <div className="title" data-aos="fade-up">
+          TRIP
+        </div>
         <div className="body">
           <div className="item">
             <img src="/img/trip-1.svg" alt="" />
@@ -334,7 +321,7 @@ const Home: FC = () => {
       </TripStyled>
       <PreviewStyled>
         <div className="left">
-          <div className="img">
+          <div className="img" data-aos="fade-up">
             <button>THE LAB</button>
             <img src="/img/preview-1.svg" alt="" />
           </div>
@@ -346,7 +333,7 @@ const Home: FC = () => {
           <div className="background">
             <button>CLOTHING</button>
           </div>
-          <div className="img">
+          <div className="img" data-aos="fade-up">
             <button>COMICS</button>
             <img src="/img/preview-2.svg" alt="" />
           </div>

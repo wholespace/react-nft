@@ -20,6 +20,12 @@ export const HeaderStyled = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     > img {
       width: 66px;
       height: 66px;
@@ -45,6 +51,10 @@ export const HeaderStyled = styled.div`
           width: 100%;
           height: 100%;
         }
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
       }
       > img {
         width: 46px;
@@ -67,9 +77,20 @@ export const HeaderStyled = styled.div`
 
     position: relative;
 
+    @media screen and (max-width: 768px) {
+      margin-top: 30px;
+
+      flex-direction: column;
+    }
+
     > .title-1 {
       font-size: 73px;
       line-height: 97px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 37px;
+        line-height: 49px;
+      }
     }
 
     > .title-2 {
@@ -78,6 +99,11 @@ export const HeaderStyled = styled.div`
       font-size: 65px;
       line-height: 86px;
       text-align: right;
+
+      @media screen and (max-width: 768px) {
+        font-size: 37px;
+        line-height: 49px;
+      }
     }
 
     > hr {
