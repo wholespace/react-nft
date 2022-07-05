@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useRef, useEffect, useState } from "react";
 import {
   HomeStyled,
   HeaderStyled,
@@ -16,11 +16,33 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// import "./test";
+
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { GrFacebook } from "react-icons/gr";
 
 const Home: FC = () => {
   const handleScroll = (e: any) => {};
+
+  const background = useRef<HTMLImageElement>(null);
+
+  // const [animationLeaf, setAnimationLeaf] = useState<any>({
+  //   width: 0,
+  //   height: 0,
+  //   world: document.createElement("div"),
+  //   leaves: [],
+  //   option: {
+  //     numLeaves: 20,
+  //     wind: {
+  //       magnitude: 1.2,
+  //       maxSpeed: 12,
+  //       duration: 300,
+  //       start: 0,
+  //       speed: 0,
+  //     },
+  //   },
+  //   timer: 0,
+  // });
 
   const settings = {
     // centerMode: true,
@@ -34,17 +56,15 @@ const Home: FC = () => {
     // slidesPerRow: 1,
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
-
   return (
     <HomeStyled>
       <HeaderStyled>
         <div className="header">
           <img src="/img/icons/avatar.svg" alt="" />
           <div className="btn-list">
-            <button className="twitter">Follow us on Twitter</button>
+            <div className="twitter">
+              <img className="twitter" src="/img/icons/follow.png" alt="" />
+            </div>
             <img src="/img/icons/menu.svg" alt="" />
           </div>
         </div>
@@ -57,7 +77,12 @@ const Home: FC = () => {
           </div>
           <hr />
         </div>
-        <img className="background" src="/img/background.svg" alt="" />
+        <img
+          className="background"
+          ref={background}
+          src="/img/background.svg"
+          alt=""
+        />
         <div className="descript">
           <div className="text">
             spending lives in search of it, a central human experience which{" "}

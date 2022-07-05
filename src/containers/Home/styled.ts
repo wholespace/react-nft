@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const HomeStyled = styled.div`
   width: 100vw;
   height: 600px;
+
+  max-width: 1920px;
 `;
 
 export const HeaderStyled = styled.div`
@@ -21,6 +23,8 @@ export const HeaderStyled = styled.div`
     > img {
       width: 66px;
       height: 66px;
+
+      cursor: pointer;
     }
 
     > .btn-list {
@@ -28,10 +32,19 @@ export const HeaderStyled = styled.div`
       flex-direction: row;
       align-items: center;
 
-      > button {
+      > .twitter {
         width: 190px;
         height: 39px;
         margin-right: 25px;
+
+        border-radius: 7px;
+
+        cursor: pointer;
+
+        > img {
+          width: 100%;
+          height: 100%;
+        }
       }
       > img {
         width: 46px;
@@ -75,7 +88,7 @@ export const HeaderStyled = styled.div`
       margin: 0;
       padding: 0;
       height: 0.01px;
-      width: calc(100% - 910px);
+      width: calc(100% - 935px);
 
       opacity: 0.4;
     }
@@ -85,6 +98,21 @@ export const HeaderStyled = styled.div`
     padding: 0;
     margin: 70px 0 0 0;
     width: 100%;
+
+    /* position: absolute; */
+    /* top: 0; */
+    /* bottom: 0; */
+    /* left: 50%; */
+    /* width: 100%; */
+    /* max-width: 880px; */
+    /* max-height: 880px; // image is only 880x880 */
+    /* transform: translate(-50%, 0); */
+    /* border: 20px solid #fff;
+    border-radius: 50px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/sidebar-bg.png)
+      no-repeat center center;
+    background-size: cover;
+    overflow: hidden; */
   }
 
   > .descript {
@@ -107,7 +135,7 @@ export const HeaderStyled = styled.div`
 
       > hr {
         position: absolute;
-        top: 12px;
+        top: 8px;
         left: 210px;
         width: calc(100% - 210px);
         opacity: 0.4;
@@ -117,20 +145,20 @@ export const HeaderStyled = styled.div`
     > .enlightment {
       position: relative;
 
-      margin-top: -40px;
+      margin-top: 20px;
       margin-left: -30px;
 
       padding-bottom: 900px;
 
       > span {
-        font-size: 312px;
+        font-size: 285px;
         text-transform: uppercase;
       }
 
       > img {
         position: absolute;
-        top: -105px;
-        left: 570px;
+        top: -155px;
+        left: calc(100% - 1370px);
       }
     }
   }
@@ -238,9 +266,9 @@ export const SetStyled = styled.div`
 
     > hr {
       position: absolute;
-      top: 80px;
+      top: 67px;
       right: 0px;
-      width: calc(100% - 1100px);
+      width: calc(100% - 1025px);
     }
   }
 
@@ -504,6 +532,7 @@ export const FooterStyled = styled.div`
     > img {
       width: 67px;
       height: 67px;
+      margin-right: 10px;
     }
   }
 
